@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 /*
 
 Questo programma prende in input un numero infinitamente grande e lo inserisce
@@ -41,7 +40,7 @@ int trasforma_char(char a){
 	if(a=='8')
 		return 8;
 	if(a=='9')
-		return 9;	
+		return 9;
 }
 
 /*
