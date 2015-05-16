@@ -40,6 +40,7 @@ int is_empty(Stack s){
     return s==NULL;
 }
 
+/*Funzione che stampa gli elementi presenti nello stack*/
 void stampa_stack(Stack s){
     if(s!=NULL){
         stampa_stack(s->next);
@@ -47,6 +48,7 @@ void stampa_stack(Stack s){
     }
 }
 
+/*Main*/
 int main(){
  Stack l=NULL;
  int i;
@@ -63,4 +65,3 @@ int main(){
  stampa_stack(l);
 return 0;
 }
-
