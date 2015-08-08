@@ -31,12 +31,28 @@ int controllaSequenza(char *array){
     return sequenze;
 }
 
+int Lunghezza(char *v){
+    int i,dim=0;
+    for (i = 0; v[i]!='\0'; i++) {
+        dim++;
+    }
+    return dim;
+}
+int cerca(char a[], int inf, int sup){
+    if(inf>sup){
+        return -1;
+    }
+    int mid=(inf+sup)/2;
+    int res = (a[mid]=='a' && a[mid+1]=='b' ? 1 : 0); //questo e perche quando divido il problema in sottoproblemi potrebbe capitare che ab siano proprio a meta e vengano divisi e quindi la sequenza non sarebbe riconosciuta
+    return  res + cerca(a,inf,mid) + cerca(a,mid+1,sup); //cerco nella prima parte dell'array da inf a 
+}
+
 //Main di prova
 int main(){
     char vett[MAXDIM];
     printf("Inserire stringa: ");
     scanf("%s", vett);
-    int elementi=controllaSequenza(vett);
+    int elementi=cerca(vett, 0, Lunghezza(vett));
     printf("Lunghezza String: %d\n",elementi);
     return 0;
     
